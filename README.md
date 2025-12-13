@@ -174,6 +174,113 @@ Authorization: Bearer YOUR_API_KEY
 
 ---
 
+## 🖥️ IDE & Tools Integration
+
+Works with any tool that supports OpenAI API:
+
+### VS Code Extensions
+- **Continue** - Set Base URL to `http://api.kodnastudio.com/v1`
+- **Cody** - Configure custom endpoint
+- **CodeGPT** - Add custom provider
+
+### Cursor IDE
+Settings → Models → Add Custom Model:
+- Base URL: `http://api.kodnastudio.com/v1`
+- API Key: `sk-kodna-xxxxx`
+
+### LangChain (Python)
+```python
+from langchain_openai import ChatOpenAI
+
+llm = ChatOpenAI(
+    base_url="http://api.kodnastudio.com/v1",
+    api_key="your-api-key",
+    model="claude-opus-4-5-20251101"
+)
+
+response = llm.invoke("Hello!")
+```
+
+---
+
+## 🌊 Streaming Example
+
+### Python
+```python
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="http://api.kodnastudio.com/v1",
+    api_key="your-api-key"
+)
+
+stream = client.chat.completions.create(
+    model="claude-opus-4-5-20251101",
+    messages=[{"role": "user", "content": "Tell me a story"}],
+    stream=True
+)
+
+for chunk in stream:
+    if chunk.choices[0].delta.content:
+        print(chunk.choices[0].delta.content, end="")
+```
+
+### JavaScript
+```javascript
+const stream = await client.chat.completions.create({
+    model: 'claude-opus-4-5-20251101',
+    messages: [{ role: 'user', content: 'Tell me a story' }],
+    stream: true
+});
+
+for await (const chunk of stream) {
+    process.stdout.write(chunk.choices[0]?.delta?.content || '');
+}
+```
+
+---
+
+## ❓ Request Format
+
+```json
+{
+    "model": "claude-opus-4-5-20251101",
+    "messages": [
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "Hello!"}
+    ],
+    "temperature": 0.7,
+    "max_tokens": 1000,
+    "stream": false
+}
+```
+
+## ✅ Response Format
+
+```json
+{
+    "id": "chatcmpl-abc123",
+    "object": "chat.completion",
+    "created": 1234567890,
+    "model": "claude-opus-4-5-20251101",
+    "choices": [{
+        "index": 0,
+        "message": {
+            "role": "assistant",
+            "content": "Hello! How can I help you today?"
+        },
+        "finish_reason": "stop"
+    }],
+    "usage": {
+        "prompt_tokens": 10,
+        "completion_tokens": 20,
+        "total_tokens": 30
+    }
+}
+```
+
+---
+
 ## 📞 Get Your API Key
 
 Contact us to get your API key: `sk-kodna-xxxxx`

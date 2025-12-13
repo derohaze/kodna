@@ -72,75 +72,75 @@ curl http://api.kodnastudio.com/v1/chat/completions \
 ## 📚 Available Models
 
 ### Anthropic / Claude
-| Model | Description |
-|-------|-------------|
-| `claude-opus-4-5-20251101` | Latest Claude Opus - Most capable ⭐ |
-| `claude-opus-4-1-20250805` | Claude Opus 4.1 |
-| `claude-sonnet-4-5-20250929` | Latest Claude Sonnet |
-| `claude-sonnet-4-20250514` | Claude Sonnet 4 |
-| `claude-haiku-4-5-20251001` | Fast Claude Haiku |
+| Model |
+|-------|
+| `claude-opus-4-5-20251101` ⭐ |
+| `claude-opus-4-1-20250805` |
+| `claude-sonnet-4-5-20250929` |
+| `claude-sonnet-4-20250514` |
+| `claude-haiku-4-5-20251001` |
 
 ### OpenAI / GPT
-| Model | Description |
-|-------|-------------|
-| `gpt-5.1` | Enhanced GPT-5 ⭐ |
-| `gpt-5` | Latest GPT-5 |
-| `gpt-4.1` | Enhanced GPT-4 |
-| `gpt-4o` | Optimized GPT-4 |
-| `gpt-4o-mini` | Fast GPT-4o variant |
-| `gpt-3.5-turbo` | Fast and reliable |
-| `openai-gpt-oss-20b` | Open source GPT 20B |
-| `openai-gpt-oss-120b` | Large open source GPT 120B |
+| Model |
+|-------|
+| `gpt-5.1` ⭐ |
+| `gpt-5` |
+| `gpt-4.1` |
+| `gpt-4o` |
+| `gpt-4o-mini` |
+| `gpt-3.5-turbo` |
+| `openai-gpt-oss-20b` |
+| `openai-gpt-oss-120b` |
 
 ### Google / Gemini
-| Model | Description |
-|-------|-------------|
-| `gemini-2.5-pro` | Latest Gemini Pro ⭐ |
-| `gemini-2.5-flash` | Fast Gemini model |
-| `gemini-2.0-flash` | Previous gen fast |
-| `gemini-1.5-pro` | Stable Gemini Pro |
-| `gemini-1.5-flash` | Fast Gemini 1.5 |
-| `gemini-pro` | Original Gemini Pro |
+| Model |
+|-------|
+| `gemini-2.5-pro` ⭐ |
+| `gemini-2.5-flash` |
+| `gemini-2.0-flash` |
+| `gemini-1.5-pro` |
+| `gemini-1.5-flash` |
+| `gemini-pro` |
 
 ### DeepSeek
-| Model | Description |
-|-------|-------------|
-| `deepseek-v3.2` | Enhanced DeepSeek |
-| `deepseek-ai/deepseek-v3.1` | Latest DeepSeek |
-| `deepseek-ai/deepseek-v3.1-terminus` | Terminus variant |
-| `deepseek-r1-distill-llama-70b` | R1 Distilled model |
+| Model |
+|-------|
+| `deepseek-v3.2` |
+| `deepseek-ai/deepseek-v3.1` |
+| `deepseek-ai/deepseek-v3.1-terminus` |
+| `deepseek-r1-distill-llama-70b` |
 
 ### Qwen / Alibaba
-| Model | Description |
-|-------|-------------|
-| `qwen/qwen3-next-80b-a3b-instruct` | Large Qwen model |
+| Model |
+|-------|
+| `qwen/qwen3-next-80b-a3b-instruct` |
 
 ### Mistral AI
-| Model | Description |
-|-------|-------------|
-| `mistralai/mistral-nemotron` | Mistral Nemotron |
+| Model |
+|-------|
+| `mistralai/mistral-nemotron` |
 
 ### Meta / Llama
-| Model | Description |
-|-------|-------------|
-| `llama3.3-70b-instruct` | Large Llama model |
-| `llama3-8b-instruct` | Small Llama model |
+| Model |
+|-------|
+| `llama3.3-70b-instruct` |
+| `llama3-8b-instruct` |
 
 ### Moonshot AI
-| Model | Description |
-|-------|-------------|
-| `moonshotai/kimi-k2-instruct-0905` | Moonshot Kimi model |
+| Model |
+|-------|
+| `moonshotai/kimi-k2-instruct-0905` |
 
 ### Minimax
-| Model | Description |
-|-------|-------------|
-| `minimaxai/minimax-m2` | Minimax model |
+| Model |
+|-------|
+| `minimaxai/minimax-m2` |
 
 ### Grok / xAI
-| Model | Description |
-|-------|-------------|
-| `grok-4.1-fast-reasoning` | Fast reasoning Grok |
-| `grok-4.1-fast-non-reasoning` | Fast non-reasoning Grok |
+| Model |
+|-------|
+| `grok-4.1-fast-reasoning` |
+| `grok-4.1-fast-non-reasoning` |
 
 ---
 

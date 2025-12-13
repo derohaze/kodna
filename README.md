@@ -73,13 +73,13 @@ curl http://api.kodnastudio.com/v1/chat/completions \
 
 ### Anthropic / Claude
 
-| Model ID | Context | Output | Status |
-|----------|--------|--------|--------|
-| `claude-opus-4-5-20251101` | 200K | 64K | Premium |
-| `claude-opus-4-1-20250805` | 80K | 32K | Available |
-| `claude-sonnet-4-5-20250929` | 200K | 64K | Available |
-| `claude-sonnet-4-20250514` | 128K | 64K | Available |
-| `claude-haiku-4-5-20251001` | 200K | 32K | Available |
+| Model ID | Context | Output |
+|----------|--------|--------|
+| `claude-opus-4-5-20251101` | 200K | 64K |
+| `claude-opus-4-1-20250805` | 80K | 32K |
+| `claude-sonnet-4-5-20250929` | 200K | 64K |
+| `claude-sonnet-4-20250514` | 128K | 64K |
+| `claude-haiku-4-5-20251001` | 200K | 32K |
 
 <details>
 <summary>📋 Copy Model IDs</summary>
@@ -96,16 +96,16 @@ claude-haiku-4-5-20251001
 
 ### OpenAI / GPT
 
-| Model ID | Context | Output | Status |
-|----------|--------|--------|--------|
-| `gpt-5.1` | 128K | 64K | Premium |
-| `gpt-5` | 128K | 64K | Premium |
-| `gpt-4.1` | 128K | 16K | Available |
-| `gpt-4o` | 128K | 4K | Available |
-| `gpt-4o-mini` | 128K | 4K | Available |
-| `gpt-3.5-turbo` | 16K | 4K | Available |
-| `openai-gpt-oss-20b` | 128K | 128K | Available |
-| `openai-gpt-oss-120b` | 128K | 128K | Available |
+| Model ID | Context | Output |
+|----------|--------|--------|
+| `gpt-5.1` | 128K | 64K |
+| `gpt-5` | 128K | 64K |
+| `gpt-4.1` | 128K | 16K |
+| `gpt-4o` | 128K | 4K |
+| `gpt-4o-mini` | 128K | 4K |
+| `gpt-3.5-turbo` | 16K | 4K |
+| `openai-gpt-oss-20b` | 128K | 128K |
+| `openai-gpt-oss-120b` | 128K | 128K |
 
 <details>
 <summary>📋 Copy Model IDs</summary>
@@ -125,14 +125,14 @@ openai-gpt-oss-120b
 
 ### Google / Gemini
 
-| Model ID | Context | Output | Status |
-|----------|--------|--------|--------|
-| `gemini-2.5-pro` | 128K | 64K | Premium |
-| `gemini-2.5-flash` | 196K | 32K | Available |
-| `gemini-2.0-flash` | 128K | 64K | Available |
-| `gemini-1.5-pro` | 128K | 64K | Available |
-| `gemini-1.5-flash` | 128K | 64K | Available |
-| `gemini-pro` | 128K | 64K | Available |
+| Model ID | Context | Output |
+|----------|--------|--------|
+| `gemini-2.5-pro` | 128K | 64K |
+| `gemini-2.5-flash` | 196K | 32K |
+| `gemini-2.0-flash` | 128K | 64K |
+| `gemini-1.5-pro` | 128K | 64K |
+| `gemini-1.5-flash` | 128K | 64K |
+| `gemini-pro` | 128K | 64K |
 
 <details>
 <summary>📋 Copy Model IDs</summary>
@@ -150,12 +150,12 @@ gemini-pro
 
 ### DeepSeek
 
-| Model ID | Context | Output | Status |
-|----------|--------|--------|--------|
-| `deepseek-v3.2` | 128K | 64K | Available |
-| `deepseek-ai/deepseek-v3.1` | 128K | 16K | Available |
-| `deepseek-ai/deepseek-v3.1-terminus` | 164K | 56K | Available |
-| `deepseek-r1-distill-llama-70b` | 128K | 128K | Available |
+| Model ID | Context | Output |
+|----------|--------|--------|
+| `deepseek-v3.2` | 128K | 64K |
+| `deepseek-ai/deepseek-v3.1` | 128K | 16K |
+| `deepseek-ai/deepseek-v3.1-terminus` | 164K | 56K |
+| `deepseek-r1-distill-llama-70b` | 128K | 128K |
 
 <details>
 <summary>📋 Copy Model IDs</summary>
@@ -171,9 +171,9 @@ deepseek-r1-distill-llama-70b
 
 ### Qwen / Alibaba
 
-| Model ID | Context | Output | Status |
-|----------|--------|--------|--------|
-| `qwen/qwen3-next-80b-a3b-instruct` | 262K | 16K | Available |
+| Model ID | Context | Output |
+|----------|--------|--------|
+| `qwen/qwen3-next-80b-a3b-instruct` | 262K | 16K |
 
 <details>
 <summary>📋 Copy Model ID</summary>
@@ -186,9 +186,9 @@ qwen/qwen3-next-80b-a3b-instruct
 
 ### Mistral AI
 
-| Model ID | Context | Output | Status |
-|----------|--------|--------|--------|
-| `mistralai/mistral-nemotron` | 128K | 16K | Available |
+| Model ID | Context | Output |
+|----------|--------|--------|
+| `mistralai/mistral-nemotron` | 128K | 16K |
 
 <details>
 <summary>📋 Copy Model ID</summary>
@@ -201,10 +201,10 @@ mistralai/mistral-nemotron
 
 ### Meta / Llama
 
-| Model ID | Context | Output | Status |
-|----------|--------|--------|--------|
-| `llama3.3-70b-instruct` | 131K | 131K | Available |
-| `llama3-8b-instruct` | 8K | 8K | Available |
+| Model ID | Context | Output |
+|----------|--------|--------|
+| `llama3.3-70b-instruct` | 131K | 131K |
+| `llama3-8b-instruct` | 8K | 8K |
 
 <details>
 <summary>📋 Copy Model IDs</summary>
@@ -218,9 +218,9 @@ llama3-8b-instruct
 
 ### Moonshot AI
 
-| Model ID | Context | Output | Status |
-|----------|--------|--------|--------|
-| `moonshotai/kimi-k2-instruct-0905` | 256K | 56K | Available |
+| Model ID | Context | Output |
+|----------|--------|--------|
+| `moonshotai/kimi-k2-instruct-0905` | 256K | 56K |
 
 <details>
 <summary>📋 Copy Model ID</summary>
@@ -233,9 +233,9 @@ moonshotai/kimi-k2-instruct-0905
 
 ### Minimax
 
-| Model ID | Context | Output | Status |
-|----------|--------|--------|--------|
-| `minimaxai/minimax-m2` | 128K | 32K | Available |
+| Model ID | Context | Output |
+|----------|--------|--------|
+| `minimaxai/minimax-m2` | 128K | 32K |
 
 <details>
 <summary>📋 Copy Model ID</summary>
@@ -248,10 +248,10 @@ minimaxai/minimax-m2
 
 ### Grok / xAI
 
-| Model ID | Context | Output | Status |
-|----------|--------|--------|--------|
-| `grok-4.1-fast-reasoning` | 200K | 64K | Available |
-| `grok-4.1-fast-non-reasoning` | 200K | 64K | Available |
+| Model ID | Context | Output |
+|----------|--------|--------|
+| `grok-4.1-fast-reasoning` | 200K | 64K |
+| `grok-4.1-fast-non-reasoning` | 200K | 64K |
 
 <details>
 <summary>📋 Copy Model IDs</summary>

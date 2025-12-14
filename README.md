@@ -127,6 +127,7 @@ openai-gpt-oss-120b
 
 | Model ID | Context | Output |
 |----------|--------|--------|
+| `gemini-3-pro-preview` | 200K | 64K |
 | `gemini-2.5-pro` | 128K | 64K |
 | `gemini-2.5-flash` | 196K | 32K |
 | `gemini-2.0-flash` | 128K | 64K |
@@ -138,6 +139,7 @@ openai-gpt-oss-120b
 <summary>📋 Copy Model IDs</summary>
 
 ```
+gemini-3-pro-preview
 gemini-2.5-pro
 gemini-2.5-flash
 gemini-2.0-flash
@@ -332,12 +334,6 @@ models:
 Settings → Models → Add Custom Model:
 - Base URL: `http://api.kodnastudio.com/v1`
 - API Key: `sk-kodna-xxxxx`
-
-### Windsurf IDE
-Settings → AI → Custom Provider:
-- Endpoint: `http://api.kodnastudio.com/v1`
-- API Key: `sk-kodna-xxxxx`
-- Model: `claude-opus-4-5-20251101`
 
 ### VS Code Extensions
 - **Cody** - Configure custom endpoint

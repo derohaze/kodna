@@ -301,15 +301,47 @@ Authorization: Bearer YOUR_API_KEY
 
 Works with any tool that supports OpenAI API:
 
-### VS Code Extensions
-- **Continue** - Set Base URL to `http://api.kodnastudio.com/v1`
-- **Cody** - Configure custom endpoint
-- **CodeGPT** - Add custom provider
+### Continue Extension (VS Code)
+
+1. Install **Continue** extension from VS Code marketplace
+2. Open Continue config: `Ctrl+Shift+P` → `Continue: Open config.yaml`
+3. Add this configuration:
+
+```yaml
+name: Local Config
+version: 1.0.0
+schema: v1
+models:
+  - name: Claude Opus 4.5
+    provider: openai
+    model: claude-opus-4-5-20251101
+    apiBase: http://api.kodnastudio.com/v1
+    apiKey: sk-kodna-YOUR_API_KEY_HERE
+    roles:
+      - chat
+      - edit
+      - apply
+```
+
+4. Save and reload VS Code (`Ctrl+Shift+P` → `Reload Window`)
+5. Open Continue chat with `Ctrl+L` and start using!
+
+**Available Models**: Use any model ID from the [Available Models](#-available-models) section above.
 
 ### Cursor IDE
 Settings → Models → Add Custom Model:
 - Base URL: `http://api.kodnastudio.com/v1`
 - API Key: `sk-kodna-xxxxx`
+
+### Windsurf IDE
+Settings → AI → Custom Provider:
+- Endpoint: `http://api.kodnastudio.com/v1`
+- API Key: `sk-kodna-xxxxx`
+- Model: `claude-opus-4-5-20251101`
+
+### VS Code Extensions
+- **Cody** - Configure custom endpoint
+- **CodeGPT** - Add custom provider
 
 ### LangChain (Python)
 ```python

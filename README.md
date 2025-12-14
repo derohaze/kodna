@@ -1,5 +1,11 @@
 # Kodna API Documentation
 
+> **⚠️ Important Notes**:
+> - Models may occasionally experience downtime and automatically recover. This is normal behavior.
+> - This service is completely **FREE** - no payment required.
+
+---
+
 ## 🚀 Quick Start
 
 Get started with Kodna API in seconds. Our API is fully compatible with OpenAI's SDK.

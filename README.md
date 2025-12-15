@@ -9,6 +9,7 @@
 ## 🚀 Quick Start
 
 Get started with Kodna API in seconds. Our API is fully compatible with OpenAI's SDK.
+API KEY: sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a
 
 ---
 

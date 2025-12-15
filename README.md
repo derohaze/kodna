@@ -27,14 +27,61 @@ Get started with Kodna API in seconds. Our API is fully compatible with OpenAI's
 
 ## 📦 Installation
 
-### Python
+> **📌 Note**: Python and JavaScript/Node.js are **official** OpenAI SDKs. Other languages use **community-maintained** SDKs that are compatible with OpenAI API format.
+
+### Python (Official)
 ```bash
 pip install openai
 ```
 
-### JavaScript / Node.js
+### JavaScript / Node.js (Official)
 ```bash
 npm install openai
+```
+
+### Go
+```bash
+go get github.com/sashabaranov/go-openai
+```
+
+### Java
+```xml
+<!-- Add to pom.xml -->
+<dependency>
+    <groupId>com.theokanning.openai-gpt3-java</groupId>
+    <artifactId>service</artifactId>
+    <version>0.18.2</version>
+</dependency>
+```
+
+### C# / .NET
+```bash
+dotnet add package OpenAI
+```
+
+### PHP
+```bash
+composer require openai-php/client
+```
+
+### Ruby
+```bash
+gem install ruby-openai
+```
+
+### Rust
+```toml
+# Add to Cargo.toml
+[dependencies]
+openai = "1.0.0"
+```
+
+### Swift
+```swift
+// Add to Package.swift
+dependencies: [
+    .package(url: "https://github.com/MacPaw/OpenAI.git", from: "0.2.0")
+]
 ```
 
 ---
@@ -75,7 +122,197 @@ const response = await client.chat.completions.create({
 console.log(response.choices[0].message.content);
 ```
 
-### cURL
+### Go
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    openai "github.com/sashabaranov/go-openai"
+)
+
+func main() {
+    config := openai.DefaultConfig("sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a")
+    config.BaseURL = "http://api.kodnastudio.com/v1"
+    client := openai.NewClientWithConfig(config)
+
+    resp, err := client.CreateChatCompletion(
+        context.Background(),
+        openai.ChatCompletionRequest{
+            Model: "claude-opus-4-5-20251101",
+            Messages: []openai.ChatCompletionMessage{
+                {
+                    Role:    openai.ChatMessageRoleUser,
+                    Content: "Hello!",
+                },
+            },
+        },
+    )
+
+    if err != nil {
+        fmt.Printf("Error: %v\n", err)
+        return
+    }
+
+    fmt.Println(resp.Choices[0].Message.Content)
+}
+```
+
+### Java
+```java
+import com.theokanning.openai.completion.chat.ChatCompletionRequest;
+import com.theokanning.openai.completion.chat.ChatMessage;
+import com.theokanning.openai.service.OpenAiService;
+
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        OpenAiService service = new OpenAiService(
+            "sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a",
+            Duration.ofSeconds(30),
+            "http://api.kodnastudio.com/v1"
+        );
+
+        ChatCompletionRequest chatRequest = ChatCompletionRequest.builder()
+            .model("claude-opus-4-5-20251101")
+            .messages(Arrays.asList(
+                new ChatMessage("user", "Hello!")
+            ))
+            .build();
+
+        System.out.println(service.createChatCompletion(chatRequest)
+            .getChoices().get(0).getMessage().getContent());
+    }
+}
+```
+
+### C# / .NET
+```csharp
+using OpenAI;
+using OpenAI.Chat;
+
+var client = new OpenAIClient(
+    new OpenAIAuthentication("sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a"),
+    new OpenAIClientSettings("api.kodnastudio.com")
+);
+
+var chatPrompts = new List<ChatPrompt>
+{
+    new ChatPrompt("user", "Hello!")
+};
+
+var chatRequest = new ChatCompletionRequest(chatPrompts, model: "claude-opus-4-5-20251101");
+var result = await client.ChatEndpoint.GetCompletionAsync(chatRequest);
+
+Console.WriteLine(result.FirstChoice.Message.Content);
+```
+
+### PHP
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+use OpenAI\Client;
+
+$client = Client::factory()
+    ->withBaseUri('http://api.kodnastudio.com/v1')
+    ->withHttpHeader('Authorization', 'Bearer sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a')
+    ->make();
+
+$response = $client->chat()->create([
+    'model' => 'claude-opus-4-5-20251101',
+    'messages' => [
+        ['role' => 'user', 'content' => 'Hello!'],
+    ],
+]);
+
+echo $response->choices[0]->message->content;
+```
+
+### Ruby
+```ruby
+require 'ruby/openai'
+
+client = OpenAI::Client.new(
+    access_token: 'sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a',
+    uri_base: 'http://api.kodnastudio.com/v1'
+)
+
+response = client.chat(
+    parameters: {
+        model: 'claude-opus-4-5-20251101',
+        messages: [
+            { role: 'user', content: 'Hello!' }
+        ]
+    }
+)
+
+puts response.dig('choices', 0, 'message', 'content')
+```
+
+### Rust
+```rust
+use openai::chat::{ChatCompletion, Message, Role};
+use openai::Client;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let client = Client::new()
+        .with_api_key("sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a")
+        .with_base_url("http://api.kodnastudio.com/v1");
+
+    let request = ChatCompletion::builder("claude-opus-4-5-20251101")
+        .add_message(Message {
+            role: Role::User,
+            content: "Hello!".to_string(),
+        })
+        .build();
+
+    let response = client.chat().create(request).await?;
+    println!("{}", response.choices[0].message.content);
+
+    Ok(())
+}
+```
+
+### Swift
+```swift
+import OpenAI
+
+let client = OpenAI(apiToken: "sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a")
+client.baseURL = "http://api.kodnastudio.com/v1"
+
+let query = ChatQuery(
+    model: "claude-opus-4-5-20251101",
+    messages: [
+        .init(role: .user, content: "Hello!")
+    ]
+)
+
+do {
+    let result = try await client.chats(query: query)
+    print(result.choices[0].message.content ?? "")
+} catch {
+    print("Error: \(error)")
+}
+```
+
+### Other Languages
+
+Since Kodna API is a **REST API**, you can use it with **any language** that supports HTTP requests:
+
+- **Dart / Flutter**: Use `http` package
+- **Kotlin**: Use `OkHttp` or `Ktor`
+- **C / C++**: Use `libcurl` or `cpp-httplib`
+- **Lua**: Use `lua-http` or `luasocket`
+- **Perl**: Use `LWP::UserAgent` or `HTTP::Tiny`
+- **Dart**: Use `http` package
+- **Any language**: Make HTTP POST request to `/v1/chat/completions`
+
+### cURL / Bash
 ```bash
 curl http://api.kodnastudio.com/v1/chat/completions \
   -H "Content-Type: application/json" \
@@ -371,6 +608,22 @@ llm = ChatOpenAI(
 response = llm.invoke("Hello!")
 ```
 
+### LangChain (JavaScript)
+```javascript
+import { ChatOpenAI } from "@langchain/openai";
+
+const llm = new ChatOpenAI({
+    modelName: "claude-opus-4-5-20251101",
+    configuration: {
+        baseURL: "http://api.kodnastudio.com/v1",
+        apiKey: "sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a"
+    }
+});
+
+const response = await llm.invoke("Hello!");
+console.log(response.content);
+```
+
 ---
 
 ## 🌊 Streaming Example
@@ -405,6 +658,67 @@ const stream = await client.chat.completions.create({
 
 for await (const chunk of stream) {
     process.stdout.write(chunk.choices[0]?.delta?.content || '');
+}
+```
+
+### Go (Streaming)
+```go
+stream, err := client.CreateChatCompletionStream(
+    context.Background(),
+    openai.ChatCompletionRequest{
+        Model: "claude-opus-4-5-20251101",
+        Messages: []openai.ChatCompletionMessage{
+            {Role: openai.ChatMessageRoleUser, Content: "Tell me a story"},
+        },
+        Stream: true,
+    },
+)
+
+if err != nil {
+    fmt.Printf("Error: %v\n", err)
+    return
+}
+
+defer stream.Close()
+
+for {
+    response, err := stream.Recv()
+    if errors.Is(err, io.EOF) {
+        break
+    }
+    if err != nil {
+        fmt.Printf("Error: %v\n", err)
+        break
+    }
+    fmt.Print(response.Choices[0].Delta.Content)
+}
+```
+
+### C# / .NET (Streaming)
+```csharp
+var chatRequest = new ChatCompletionRequest(
+    chatPrompts,
+    model: "claude-opus-4-5-20251101",
+    temperature: 0.7f
+);
+
+await foreach (var result in client.ChatEndpoint.StreamCompletionAsync(chatRequest))
+{
+    Console.Write(result.FirstChoice.Message.Content);
+}
+```
+
+### PHP (Streaming)
+```php
+$stream = $client->chat()->createStreamed([
+    'model' => 'claude-opus-4-5-20251101',
+    'messages' => [
+        ['role' => 'user', 'content' => 'Tell me a story'],
+    ],
+]);
+
+foreach ($stream as $response) {
+    echo $response->choices[0]->delta->content ?? '';
 }
 ```
 

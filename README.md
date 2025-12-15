@@ -1,5 +1,18 @@
 # Kodna API Documentation
 
+## 🔑 Public API Key
+
+```
+sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a
+```
+
+> **💡 Public Key Features**:
+> - ✅ **Unlimited usage** - No consumption limits
+> - ⚠️ **Rate Limit**: 100 requests per minute
+> - 🆓 **Completely FREE** - No payment required
+
+---
+
 > **⚠️ Important Notes**:
 > - Models may occasionally experience downtime and automatically recover. This is normal behavior.
 > - This service is completely **FREE** - no payment required.
@@ -9,7 +22,6 @@
 ## 🚀 Quick Start
 
 Get started with Kodna API in seconds. Our API is fully compatible with OpenAI's SDK.
-
 
 ---
 
@@ -35,7 +47,7 @@ from openai import OpenAI
 
 client = OpenAI(
     base_url="http://api.kodnastudio.com/v1",
-    api_key="your-api-key"
+    api_key="sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a"
 )
 
 response = client.chat.completions.create(
@@ -52,7 +64,7 @@ import OpenAI from 'openai';
 
 const client = new OpenAI({
     baseURL: 'http://api.kodnastudio.com/v1',
-    apiKey: 'your-api-key'
+    apiKey: 'sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a'
 });
 
 const response = await client.chat.completions.create({
@@ -67,7 +79,7 @@ console.log(response.choices[0].message.content);
 ```bash
 curl http://api.kodnastudio.com/v1/chat/completions \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Authorization: Bearer sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a" \
   -d '{
     "model": "claude-opus-4-5-20251101",
     "messages": [{"role": "user", "content": "Hello!"}]
@@ -290,7 +302,7 @@ http://api.kodnastudio.com/v1
 
 ### Authentication
 ```
-Authorization: Bearer YOUR_API_KEY
+Authorization: Bearer sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a
 ```
 
 ---
@@ -325,7 +337,7 @@ models:
     provider: openai
     model: claude-opus-4-5-20251101
     apiBase: http://api.kodnastudio.com/v1
-    apiKey: sk-kodna-YOUR_API_KEY_HERE
+    apiKey: sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a
     roles:
       - chat
       - edit
@@ -340,7 +352,7 @@ models:
 ### Cursor IDE
 Settings → Models → Add Custom Model:
 - Base URL: `http://api.kodnastudio.com/v1`
-- API Key: `sk-kodna-xxxxx`
+- API Key: `sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a`
 
 ### VS Code Extensions
 - **Cody** - Configure custom endpoint
@@ -352,7 +364,7 @@ from langchain_openai import ChatOpenAI
 
 llm = ChatOpenAI(
     base_url="http://api.kodnastudio.com/v1",
-    api_key="your-api-key",
+    api_key="sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a",
     model="claude-opus-4-5-20251101"
 )
 
@@ -369,7 +381,7 @@ from openai import OpenAI
 
 client = OpenAI(
     base_url="http://api.kodnastudio.com/v1",
-    api_key="your-api-key"
+    api_key="sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a"
 )
 
 stream = client.chat.completions.create(
@@ -441,7 +453,17 @@ for await (const chunk of stream) {
 
 ## 📞 Get Your API Key
 
-Contact us to get your API key: `sk-kodna-xxxxx`
+### Public API Key
+
+You can use this public API key to get started:
+
+```
+sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a
+```
+
+### Custom API Key
+
+Contact us to get your custom API key: `sk-kodna-xxxxx`
 
 ---
 

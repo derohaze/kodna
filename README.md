@@ -555,6 +555,154 @@ Authorization: Bearer sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0
 
 ---
 
+## 🤖 Automation Tools Integration
+
+Kodna API is **100% compatible** with OpenAI API format, so it works seamlessly with **any automation tool** that supports OpenAI:
+
+### n8n
+
+1. Add **HTTP Request** node
+2. Configure:
+   - **Method**: `POST`
+   - **URL**: `http://api.kodnastudio.com/v1/chat/completions`
+   - **Authentication**: `Generic Credential Type`
+   - **Header Name**: `Authorization`
+   - **Header Value**: `Bearer sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a`
+   - **Body Content Type**: `JSON`
+   - **Body**: 
+   ```json
+   {
+     "model": "claude-opus-4-5-20251101",
+     "messages": [
+       {"role": "user", "content": "{{ $json.message }}"}
+     ]
+   }
+   ```
+3. Parse response: `{{ $json.choices[0].message.content }}`
+
+### Zapier
+
+1. Create new Zap
+2. Add **Webhooks by Zapier** → **POST** action
+3. Configure:
+   - **URL**: `http://api.kodnastudio.com/v1/chat/completions`
+   - **Method**: `POST`
+   - **Headers**: 
+     ```
+     Authorization: Bearer sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a
+     Content-Type: application/json
+     ```
+   - **Data**: 
+   ```json
+   {
+     "model": "claude-opus-4-5-20251101",
+     "messages": [{"role": "user", "content": "Hello from Zapier!"}]
+   }
+   ```
+
+### Make (Integromat)
+
+1. Add **HTTP > Make a Request** module
+2. Configure:
+   - **URL**: `http://api.kodnastudio.com/v1/chat/completions`
+   - **Method**: `POST`
+   - **Headers**:
+     ```
+     Authorization: Bearer sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a
+     Content-Type: application/json
+     ```
+   - **Body Type**: `Raw`
+   - **Body**: 
+   ```json
+   {
+     "model": "claude-opus-4-5-20251101",
+     "messages": [{"role": "user", "content": "{{1.message}}"}]
+   }
+   ```
+
+### Microsoft Power Automate
+
+1. Add **HTTP** action
+2. Configure:
+   - **Method**: `POST`
+   - **URI**: `http://api.kodnastudio.com/v1/chat/completions`
+   - **Headers**:
+     ```
+     Authorization: Bearer sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a
+     Content-Type: application/json
+     ```
+   - **Body**:
+   ```json
+   {
+     "model": "claude-opus-4-5-20251101",
+     "messages": [{"role": "user", "content": "@{triggerBody()['message']}"}]
+   }
+   ```
+
+### IFTTT
+
+1. Use **Webhooks** service
+2. Configure:
+   - **URL**: `http://api.kodnastudio.com/v1/chat/completions`
+   - **Method**: `POST`
+   - **Content Type**: `application/json`
+   - **Body**:
+   ```json
+   {
+     "model": "claude-opus-4-5-20251101",
+     "messages": [{"role": "user", "content": "{{Value1}}"}],
+     "headers": {
+       "Authorization": "Bearer sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a"
+     }
+   }
+   ```
+
+### Google Apps Script
+
+```javascript
+function callKodnaAPI(message) {
+  const url = 'http://api.kodnastudio.com/v1/chat/completions';
+  const apiKey = 'sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a';
+  
+  const payload = {
+    model: 'claude-opus-4-5-20251101',
+    messages: [
+      { role: 'user', content: message }
+    ]
+  };
+  
+  const options = {
+    method: 'post',
+    contentType: 'application/json',
+    headers: {
+      'Authorization': 'Bearer ' + apiKey
+    },
+    payload: JSON.stringify(payload)
+  };
+  
+  const response = UrlFetchApp.fetch(url, options);
+  const data = JSON.parse(response.getContentText());
+  return data.choices[0].message.content;
+}
+```
+
+### Other Automation Tools
+
+Since Kodna API uses **standard OpenAI API format**, it works with:
+- ✅ **Any tool that supports OpenAI API**
+- ✅ **Any HTTP client** (Postman, Insomnia, etc.)
+- ✅ **Any programming language** with HTTP support
+- ✅ **Any workflow automation platform**
+
+**Key Configuration for All Tools:**
+- **Base URL**: `http://api.kodnastudio.com/v1`
+- **Endpoint**: `/chat/completions`
+- **Method**: `POST`
+- **Authentication**: `Bearer {your-api-key}`
+- **Content-Type**: `application/json`
+
+---
+
 ## 🖥️ IDE & Tools Integration
 
 Works with any tool that supports OpenAI API:

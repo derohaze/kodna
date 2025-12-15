@@ -552,6 +552,90 @@ Authorization: Bearer sk-kodna-3c1c64140e3424f044450cb9358dce43ebed79c7c8f4b10a2
 - ✅ Streaming support
 - ✅ Rate limiting
 - ✅ Token counting
+- ✅ Automatic context compression for large requests
+
+---
+
+## 📏 Request Size Limits & Context Compression
+
+### ⚠️ Important: Request Size Limits
+
+Our API automatically handles large requests to ensure reliability. Here's what you need to know:
+
+#### 📊 Size Limits
+
+| Limit Type | Value | Description |
+|------------|-------|-------------|
+| **Maximum Request Size** | ~70,000 characters | Total characters across all messages in a request |
+| **Recommended Size** | < 50,000 characters | For optimal performance |
+| **Automatic Compression** | Enabled | Large requests are automatically compressed |
+
+#### 🔄 How It Works
+
+**For requests under 70,000 characters:**
+- ✅ Your request is sent **as-is** without any modifications
+- ✅ All messages are preserved exactly as you sent them
+
+**For requests over 70,000 characters:**
+- 🔄 **Automatic compression is applied** to prevent errors
+- 📝 **Context summary** is created from older messages
+- 💾 **Recent messages** (last 1-2 conversation turns) are preserved
+- 🗄️ **Full history** is stored in our database for future reference
+
+#### 📋 Compression Strategy
+
+When your request exceeds the limit, our system:
+
+1. **Keeps system messages** - All system/instruction messages are preserved
+2. **Creates a state summary** - Extracts key information (goals, constraints, decisions) from older messages
+3. **Keeps recent context** - Last 1-2 conversation turns (user + assistant messages) are kept intact
+4. **Stores full history** - Complete conversation history is saved in our database
+
+**Example:**
+```
+Original: 10 messages, 90,000 characters
+↓ (Automatic Compression)
+Compressed: System message + Summary + Last 2 turns, ~5,000 characters
+Result: ✅ Request succeeds, context preserved
+```
+
+#### 💡 Best Practices
+
+**✅ Recommended:**
+- Keep individual messages under 10,000 characters
+- Use `conversation_id` to maintain context across requests
+- Split very long content into multiple requests
+- Use system messages for important instructions (they're always preserved)
+
+**❌ Avoid:**
+- Sending entire codebases in a single message
+- Including massive JSON/data dumps in messages
+- Sending 20+ messages in one request without compression
+
+#### 🎯 What This Means for You
+
+**✅ You CAN:**
+- Send requests of any size (we handle compression automatically)
+- Use long conversations (history is preserved in our database)
+- Include detailed instructions and context
+- Build complex applications with extensive context
+
+**⚠️ You SHOULD KNOW:**
+- Very large requests (>70k chars) will be automatically compressed
+- Older messages in large requests become a summary (not full text)
+- Recent messages (last 1-2 turns) are always preserved in full
+- System messages are never compressed or removed
+
+#### 🔍 Monitoring Compression
+
+If compression occurs, you'll see a warning in the response logs:
+```
+⚠️ Request size (90,000 chars) exceeds limit (70,000).
+Applied State-based compression: 8 messages → summary,
+90,000 → 5,000 chars (5.6% of original)
+```
+
+This is **normal behavior** and ensures your requests succeed reliably.
 
 ---
 
@@ -886,6 +970,18 @@ foreach ($stream as $response) {
     "stream": false
 }
 ```
+
+### Message Roles
+
+The API follows **OpenAI API standard** and supports only these roles:
+
+| Role | Description | Usage |
+|------|-------------|-------|
+| `user` | Messages from the user | Required - user's questions/requests |
+| `assistant` | Messages from the assistant | Optional - for conversation history |
+| `system` | System instructions | Optional - usually first message for context |
+
+> **⚠️ Important**: Only `user`, `assistant`, and `system` roles are supported. Other roles like `developer`, `function`, etc. are **not supported** as they are not part of the OpenAI API standard format.
 
 ## ✅ Response Format
 

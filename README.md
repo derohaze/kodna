@@ -3,7 +3,7 @@
 ## 🔑 Public API Key
 
 ```
-sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a
+sk-kodna-3c1c64140e3424f044450cb9358dce43ebed79c7c8f4b10a2ac3965ae6ce8864
 ```
 
 > **💡 Public Key Features**:
@@ -94,7 +94,7 @@ from openai import OpenAI
 
 client = OpenAI(
     base_url="http://api.kodnastudio.com/v1",
-    api_key="sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a"
+    api_key="sk-kodna-3c1c64140e3424f044450cb9358dce43ebed79c7c8f4b10a2ac3965ae6ce8864"
 )
 
 response = client.chat.completions.create(
@@ -111,7 +111,7 @@ import OpenAI from 'openai';
 
 const client = new OpenAI({
     baseURL: 'http://api.kodnastudio.com/v1',
-    apiKey: 'sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a'
+    apiKey: 'sk-kodna-3c1c64140e3424f044450cb9358dce43ebed79c7c8f4b10a2ac3965ae6ce8864'
 });
 
 const response = await client.chat.completions.create({
@@ -133,7 +133,7 @@ import (
 )
 
 func main() {
-    config := openai.DefaultConfig("sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a")
+    config := openai.DefaultConfig("sk-kodna-3c1c64140e3424f044450cb9358dce43ebed79c7c8f4b10a2ac3965ae6ce8864")
     config.BaseURL = "http://api.kodnastudio.com/v1"
     client := openai.NewClientWithConfig(config)
 
@@ -170,7 +170,7 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         OpenAiService service = new OpenAiService(
-            "sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a",
+            "sk-kodna-3c1c64140e3424f044450cb9358dce43ebed79c7c8f4b10a2ac3965ae6ce8864",
             Duration.ofSeconds(30),
             "http://api.kodnastudio.com/v1"
         );
@@ -194,7 +194,7 @@ using OpenAI;
 using OpenAI.Chat;
 
 var client = new OpenAIClient(
-    new OpenAIAuthentication("sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a"),
+    new OpenAIAuthentication("sk-kodna-3c1c64140e3424f044450cb9358dce43ebed79c7c8f4b10a2ac3965ae6ce8864"),
     new OpenAIClientSettings("api.kodnastudio.com")
 );
 
@@ -219,7 +219,7 @@ use OpenAI\Client;
 
 $client = Client::factory()
     ->withBaseUri('http://api.kodnastudio.com/v1')
-    ->withHttpHeader('Authorization', 'Bearer sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a')
+    ->withHttpHeader('Authorization', 'Bearer sk-kodna-3c1c64140e3424f044450cb9358dce43ebed79c7c8f4b10a2ac3965ae6ce8864')
     ->make();
 
 $response = $client->chat()->create([
@@ -237,7 +237,7 @@ echo $response->choices[0]->message->content;
 require 'ruby/openai'
 
 client = OpenAI::Client.new(
-    access_token: 'sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a',
+    access_token: 'sk-kodna-3c1c64140e3424f044450cb9358dce43ebed79c7c8f4b10a2ac3965ae6ce8864',
     uri_base: 'http://api.kodnastudio.com/v1'
 )
 
@@ -261,7 +261,7 @@ use openai::Client;
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new()
-        .with_api_key("sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a")
+        .with_api_key("sk-kodna-3c1c64140e3424f044450cb9358dce43ebed79c7c8f4b10a2ac3965ae6ce8864")
         .with_base_url("http://api.kodnastudio.com/v1");
 
     let request = ChatCompletion::builder("claude-opus-4-5-20251101")
@@ -282,7 +282,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```swift
 import OpenAI
 
-let client = OpenAI(apiToken: "sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a")
+let client = OpenAI(apiToken: "sk-kodna-3c1c64140e3424f044450cb9358dce43ebed79c7c8f4b10a2ac3965ae6ce8864")
 client.baseURL = "http://api.kodnastudio.com/v1"
 
 let query = ChatQuery(
@@ -316,7 +316,7 @@ Since Kodna API is a **REST API**, you can use it with **any language** that sup
 ```bash
 curl http://api.kodnastudio.com/v1/chat/completions \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a" \
+  -H "Authorization: Bearer sk-kodna-3c1c64140e3424f044450cb9358dce43ebed79c7c8f4b10a2ac3965ae6ce8864" \
   -d '{
     "model": "claude-opus-4-5-20251101",
     "messages": [{"role": "user", "content": "Hello!"}]
@@ -539,7 +539,7 @@ http://api.kodnastudio.com/v1
 
 ### Authentication
 ```
-Authorization: Bearer sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a
+Authorization: Bearer sk-kodna-3c1c64140e3424f044450cb9358dce43ebed79c7c8f4b10a2ac3965ae6ce8864
 ```
 
 ---
@@ -567,7 +567,7 @@ Kodna API is **100% compatible** with OpenAI API format, so it works seamlessly 
    - **URL**: `http://api.kodnastudio.com/v1/chat/completions`
    - **Authentication**: `Generic Credential Type`
    - **Header Name**: `Authorization`
-   - **Header Value**: `Bearer sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a`
+   - **Header Value**: `Bearer sk-kodna-3c1c64140e3424f044450cb9358dce43ebed79c7c8f4b10a2ac3965ae6ce8864`
    - **Body Content Type**: `JSON`
    - **Body**: 
    ```json
@@ -589,7 +589,7 @@ Kodna API is **100% compatible** with OpenAI API format, so it works seamlessly 
    - **Method**: `POST`
    - **Headers**: 
      ```
-     Authorization: Bearer sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a
+     Authorization: Bearer sk-kodna-3c1c64140e3424f044450cb9358dce43ebed79c7c8f4b10a2ac3965ae6ce8864
      Content-Type: application/json
      ```
    - **Data**: 
@@ -608,7 +608,7 @@ Kodna API is **100% compatible** with OpenAI API format, so it works seamlessly 
    - **Method**: `POST`
    - **Headers**:
      ```
-     Authorization: Bearer sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a
+     Authorization: Bearer sk-kodna-3c1c64140e3424f044450cb9358dce43ebed79c7c8f4b10a2ac3965ae6ce8864
      Content-Type: application/json
      ```
    - **Body Type**: `Raw`
@@ -628,7 +628,7 @@ Kodna API is **100% compatible** with OpenAI API format, so it works seamlessly 
    - **URI**: `http://api.kodnastudio.com/v1/chat/completions`
    - **Headers**:
      ```
-     Authorization: Bearer sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a
+     Authorization: Bearer sk-kodna-3c1c64140e3424f044450cb9358dce43ebed79c7c8f4b10a2ac3965ae6ce8864
      Content-Type: application/json
      ```
    - **Body**:
@@ -652,7 +652,7 @@ Kodna API is **100% compatible** with OpenAI API format, so it works seamlessly 
      "model": "claude-opus-4-5-20251101",
      "messages": [{"role": "user", "content": "{{Value1}}"}],
      "headers": {
-       "Authorization": "Bearer sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a"
+       "Authorization": "Bearer sk-kodna-3c1c64140e3424f044450cb9358dce43ebed79c7c8f4b10a2ac3965ae6ce8864"
      }
    }
    ```
@@ -662,7 +662,7 @@ Kodna API is **100% compatible** with OpenAI API format, so it works seamlessly 
 ```javascript
 function callKodnaAPI(message) {
   const url = 'http://api.kodnastudio.com/v1/chat/completions';
-  const apiKey = 'sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a';
+  const apiKey = 'sk-kodna-3c1c64140e3424f044450cb9358dce43ebed79c7c8f4b10a2ac3965ae6ce8864';
   
   const payload = {
     model: 'claude-opus-4-5-20251101',
@@ -722,7 +722,7 @@ models:
     provider: openai
     model: claude-opus-4-5-20251101
     apiBase: http://api.kodnastudio.com/v1
-    apiKey: sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a
+    apiKey: sk-kodna-3c1c64140e3424f044450cb9358dce43ebed79c7c8f4b10a2ac3965ae6ce8864
     roles:
       - chat
       - edit
@@ -737,7 +737,7 @@ models:
 ### Cursor IDE
 Settings → Models → Add Custom Model:
 - Base URL: `http://api.kodnastudio.com/v1`
-- API Key: `sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a`
+- API Key: `sk-kodna-3c1c64140e3424f044450cb9358dce43ebed79c7c8f4b10a2ac3965ae6ce8864`
 
 ### VS Code Extensions
 - **Cody** - Configure custom endpoint
@@ -749,7 +749,7 @@ from langchain_openai import ChatOpenAI
 
 llm = ChatOpenAI(
     base_url="http://api.kodnastudio.com/v1",
-    api_key="sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a",
+    api_key="sk-kodna-3c1c64140e3424f044450cb9358dce43ebed79c7c8f4b10a2ac3965ae6ce8864",
     model="claude-opus-4-5-20251101"
 )
 
@@ -764,7 +764,7 @@ const llm = new ChatOpenAI({
     modelName: "claude-opus-4-5-20251101",
     configuration: {
         baseURL: "http://api.kodnastudio.com/v1",
-        apiKey: "sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a"
+        apiKey: "sk-kodna-3c1c64140e3424f044450cb9358dce43ebed79c7c8f4b10a2ac3965ae6ce8864"
     }
 });
 
@@ -782,7 +782,7 @@ from openai import OpenAI
 
 client = OpenAI(
     base_url="http://api.kodnastudio.com/v1",
-    api_key="sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a"
+    api_key="sk-kodna-3c1c64140e3424f044450cb9358dce43ebed79c7c8f4b10a2ac3965ae6ce8864"
 )
 
 stream = client.chat.completions.create(
@@ -920,7 +920,7 @@ foreach ($stream as $response) {
 You can use this public API key to get started:
 
 ```
-sk-kodna-649a05aef37df2691583ea137da5654d5f494131cab5d04c0a05a01695861a7a
+sk-kodna-3c1c64140e3424f044450cb9358dce43ebed79c7c8f4b10a2ac3965ae6ce8864
 ```
 
 ### Custom API Key

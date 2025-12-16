@@ -1,5 +1,12 @@
 # Kodna API Documentation
 
+> ⚠️ **Notes**:
+> - Models may occasionally experience downtime and automatically recover
+> - Large requests (>60K chars) are automatically compressed
+> - Rate limit: 100 requests/minute (public key)
+
+---
+
 ## 🔑 Public API Key
 
 ```

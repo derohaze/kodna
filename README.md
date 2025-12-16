@@ -1,5 +1,7 @@
 # Kodna API Documentation
 
+> 🤖 **32 AI Models Available** — OpenAI, Claude, Gemini, DeepSeek, Llama, Grok & more
+
 > ⚠️ **Notes**:
 > - Models may occasionally experience downtime and automatically recover
 > - Large requests (>60K chars) are automatically compressed
@@ -52,39 +54,50 @@ go get github.com/sashabaranov/go-openai
 
 ---
 
-## 📚 Available Models
+## 📚 Available Models (32 Models)
 
 ### OpenAI
 
 | Model ID |
 |----------|
+| `gpt-5.1` |
+| `gpt-5` |
+| `gpt-4.1` |
 | `gpt-4o` |
 | `gpt-4o-mini` |
-| `gpt-4.1` |
 | `gpt-3.5-turbo` |
+| `openai-gpt-oss-120b` |
+| `openai-gpt-oss-20b` |
 
 ### Anthropic (Claude)
 
 | Model ID |
 |----------|
 | `claude-opus-4-5-20251101` |
-| `claude-sonnet-4-5-20250929` |
 | `claude-haiku-4-5-20251001` |
+| `claude-sonnet-4-5-20250929` |
+| `claude-opus-4-1-20250805` |
+| `claude-sonnet-4-20250514` |
 
 ### Google (Gemini)
 
 | Model ID |
 |----------|
+| `gemini-3-pro-preview` |
 | `gemini-2.5-pro` |
 | `gemini-2.5-flash` |
 | `gemini-2.0-flash` |
 | `gemini-1.5-pro` |
+| `gemini-1.5-flash` |
+| `gemini-pro` |
 
 ### DeepSeek
 
 | Model ID |
 |----------|
 | `deepseek-v3.2` |
+| `deepseek-ai/deepseek-v3.1-terminus` |
+| `deepseek-ai/deepseek-v3.1` |
 | `deepseek-r1-distill-llama-70b` |
 
 ### Meta (Llama)
@@ -101,13 +114,28 @@ go get github.com/sashabaranov/go-openai
 | `grok-4.1-fast-reasoning` |
 | `grok-4.1-fast-non-reasoning` |
 
-### Others
+### Qwen (Alibaba)
 
 | Model ID |
 |----------|
 | `qwen/qwen3-next-80b-a3b-instruct` |
+
+### Mistral AI
+
+| Model ID |
+|----------|
 | `mistralai/mistral-nemotron` |
+
+### Moonshot AI
+
+| Model ID |
+|----------|
 | `moonshotai/kimi-k2-instruct-0905` |
+
+### Minimax
+
+| Model ID |
+|----------|
 | `minimaxai/minimax-m2` |
 
 ---

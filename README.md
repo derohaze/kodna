@@ -1,6 +1,6 @@
 # Kodna API Documentation
 
-> 🤖 **32 AI Models Available** — OpenAI, Claude, Gemini, DeepSeek, Llama, Grok & more
+>  **32 AI Models Available** — OpenAI, Claude, Gemini, DeepSeek, Llama, Grok & more
 
 > ⚠️ **Notes**:
 > - Models may occasionally experience downtime and automatically recover

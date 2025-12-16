@@ -55,53 +55,60 @@ go get github.com/sashabaranov/go-openai
 ## 📚 Available Models
 
 ### OpenAI
-```
-gpt-4o
-gpt-4o-mini
-gpt-4.1
-gpt-3.5-turbo
-```
+
+| Model ID |
+|----------|
+| `gpt-4o` |
+| `gpt-4o-mini` |
+| `gpt-4.1` |
+| `gpt-3.5-turbo` |
 
 ### Anthropic (Claude)
-```
-claude-opus-4-5-20251101
-claude-sonnet-4-5-20250929
-claude-haiku-4-5-20251001
-```
+
+| Model ID |
+|----------|
+| `claude-opus-4-5-20251101` |
+| `claude-sonnet-4-5-20250929` |
+| `claude-haiku-4-5-20251001` |
 
 ### Google (Gemini)
-```
-gemini-2.5-pro
-gemini-2.5-flash
-gemini-2.0-flash
-gemini-1.5-pro
-```
+
+| Model ID |
+|----------|
+| `gemini-2.5-pro` |
+| `gemini-2.5-flash` |
+| `gemini-2.0-flash` |
+| `gemini-1.5-pro` |
 
 ### DeepSeek
-```
-deepseek-v3.2
-deepseek-r1-distill-llama-70b
-```
+
+| Model ID |
+|----------|
+| `deepseek-v3.2` |
+| `deepseek-r1-distill-llama-70b` |
 
 ### Meta (Llama)
-```
-llama3.3-70b-instruct
-llama3-8b-instruct
-```
+
+| Model ID |
+|----------|
+| `llama3.3-70b-instruct` |
+| `llama3-8b-instruct` |
 
 ### Grok (xAI)
-```
-grok-4.1-fast-reasoning
-grok-4.1-fast-non-reasoning
-```
+
+| Model ID |
+|----------|
+| `grok-4.1-fast-reasoning` |
+| `grok-4.1-fast-non-reasoning` |
 
 ### Others
-```
-qwen/qwen3-next-80b-a3b-instruct
-mistralai/mistral-nemotron
-moonshotai/kimi-k2-instruct-0905
-minimaxai/minimax-m2
-```
+
+| Model ID |
+|----------|
+| `qwen/qwen3-next-80b-a3b-instruct` |
+| `mistralai/mistral-nemotron` |
+| `moonshotai/kimi-k2-instruct-0905` |
+| `minimaxai/minimax-m2` |
 
 ---
 
